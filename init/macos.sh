@@ -1,23 +1,19 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 export DOTPATH=${PREFIX:-"$HOME/dot"}
 
 # install homebrew
-
-if ! (( $+commands[brew] )); then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-  echo "homebrew is available, update homebrew"
-  brew update
-fi
+command -v brew >/dev/null 2>&1 || {
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+  eval "$(/opt/homebrew/bin/brew shellenv)";
+}
+brew update
 
 # install git
 
-if ! (( $+commands[git] )); then
+command -v git >/dev/null 2>&1 || {
   brew install git
-else
-  echo "git is available"
-fi
+}
 
 # clone self
 
@@ -35,6 +31,10 @@ fi
 brew bundle --file="init/Brewfile"
 
 # run script
+
+echo "Successfully installed environments, now let to run setup script"
+
+cd "$DOTPATH" || exit 1
 
 bun install
 bun run bin/setup.ts
