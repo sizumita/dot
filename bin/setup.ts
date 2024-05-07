@@ -68,7 +68,7 @@ await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zsh.d ${home}/.zsh.d`)
 
 logger.info("Setup homebrew")
 await logger.complete("brew update")
-await logger.complete(`brew bundle --file ($env.DOT_PATH | path join Brewfile)`)
+await logger.complete(`brew bundle --file ${dotPath}/Brewfile`)
 
 // Setup Config
 logger.info("Setup .config")
