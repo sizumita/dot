@@ -114,8 +114,10 @@ logger.debug("Installing rust")
 if (Bun.which("cargo") === null) {
     await logger.complete("curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y")
 } else {
-    logger.info("Rust is installed. updating...")
-    await logger.complete("rustup self update")
+    if (!process.env.CI) {
+        logger.info("Rust is installed. updating...")
+        await logger.complete("rustup self update")
+    }
 }
 
 logger.info("Please restart this computer.")
