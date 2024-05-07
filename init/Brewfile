@@ -1,12 +1,7 @@
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "oven-sh/bun"
 
 brew "git"
-brew "gh"
 brew "oven-sh/bun/bun"
 brew "nushell"
 brew "starship"
-
-cask "alfred"
-cask "font-hack-nerd-font"

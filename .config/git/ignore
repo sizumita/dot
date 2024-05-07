@@ -1,0 +1,13 @@
+# MacOS
+
+.DS_Store
+
+# python venv
+.venv
+venv/
+
+# dotenv
+
+.env
+.env.local
+.dev.vars

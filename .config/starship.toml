@@ -1,0 +1,75 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$git_status \
+$username\
+$hostname\
+$localip\
+$nodejs\
+$bun\
+$elixir\
+$rust
+$directory\
+[](fg:cyan bg:127)\
+$git_branch\
+[ ](fg:127 bg:none)"""
+
+right_format = "$status$time$battery$memory_usage"
+
+[aws]
+disabled = true
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[bun]
+symbol = "Bun "
+
+[rust]
+symbol = "Rust "
+
+[[battery.display]]
+threshold = 100
+style = 'bold green'
+
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
+
+[elixir]
+symbol = 'Elixir '
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
+
+[directory]
+format = '[$read_only $path ]($style)'
+style = 'bold bright-white bg:cyan'
+
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+style = "bright-white bg:127"
+
+
+[git_status]
+format = '\[ $staged$untracked$modified$deleted\]'
+staged = '[+$count](bold green) '
+untracked = "[+$count](purple) "
+modified = "[±$count](yellow) "
+deleted = "[-$count](red)"
+
+[memory_usage]
+disabled = false
+threshold = 0
+format = "$symbol [${ram}( | ${swap})]($style) "
+
+[time]
+disabled = false
+style = "bold green"
+
+[status]
+disabled = false
+format = '[$status]($style) '
