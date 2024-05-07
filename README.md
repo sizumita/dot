@@ -1,15 +1,23 @@
 # dotfiles
 
-To install dependencies:
+@sizumita の個人用dotfiles.
 
-```bash
-bun install
+## Installation
+
+```shell
+$ curl -sL dot.smdr.io | bash
 ```
 
-To run:
+## Usage
 
-```bash
-bun run index.ts
+### Update
+
+```shell
+self update
 ```
 
-This project was created using `bun init` in bun v1.1.6. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+### Check
+
+```shell
+self check
+```
