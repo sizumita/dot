@@ -68,10 +68,10 @@ await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zsh.d ${home}/.zsh.d`)
 
 logger.info("Setup homebrew")
 await logger.complete("brew update")
-if (process.env.CI) {
-    await logger.complete(`brew bundle --file ${dotPath}/Brewfile --brews --casks --taps --vscode`)
-} else {
+if (!process.env.CI) {
     await logger.complete(`brew bundle --file ${dotPath}/Brewfile`)
+} else {
+    logger.info("CI is set, skipping...")
 }
 
 // Setup Config

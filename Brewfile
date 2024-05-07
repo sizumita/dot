@@ -48,7 +48,7 @@ cask "steam"
 cask "steermouse"
 cask "tor-browser"
 cask "visual-studio-code"
-cask "zoom" unless system "bash -c \"[ -z $CI ] && exit -1\""
+cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Codye", id: 1516894961
 mas "GarageBand", id: 682658836
