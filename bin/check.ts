@@ -9,7 +9,7 @@ const logger = new Logger("self check", {
         show_error: true
     },
     complete: {
-        quiet: !!process.env.CI
+        quiet: !process.env.CI
     }
 })
 

@@ -10,7 +10,7 @@ const logger = new Logger("setup", {
         exit: true
     },
     complete: {
-        quiet: !!process.env.CI
+        quiet: !process.env.CI
     }
 })
 
