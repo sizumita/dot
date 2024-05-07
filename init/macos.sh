@@ -21,7 +21,6 @@ fi
 
 # clone self
 
-echo $DOTPATH
 if [ -d "$DOTPATH" ]; then
   cd "$DOTPATH" || exit 1
   git status >/dev/null 2>&1 || exit 1

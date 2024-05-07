@@ -1,0 +1,15 @@
+name: macos test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  macos-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run init
+        run: ${GITHUB_WORKSPACE}/init/macos.sh
