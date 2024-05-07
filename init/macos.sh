@@ -36,4 +36,5 @@ brew bundle --file="init/Brewfile"
 
 # run script
 
+bun install
 bun run bin/setup.ts
