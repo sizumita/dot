@@ -2,6 +2,7 @@ import { $ } from "bun";
 import {Logger} from "../src/logger";
 
 const dotPath = await $`echo "$HOME/dot"`.text().then(x => x.trim())
+const home = process.env.HOME as string
 const logger = new Logger("setup", {
     use_nu: true,
     error: {
@@ -37,7 +38,7 @@ const envPlist = `
       <string>/bin/launchctl</string>
       <string>setenv</string>
       <string>XDG_CONFIG_HOME</string>
-      <string>/Users/sizumita/dot</string>
+      <string>$HOME/dot</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
@@ -46,7 +47,7 @@ const envPlist = `
 `
 logger.debug("Writing xdg config")
 await Bun.write(
-    "/Users/sizumita/Library/LaunchAgents/xdg.config.plist",
+    `${home}/Library/LaunchAgents/xdg.config.plist`,
     envPlist,
     {
         createPath: false
@@ -54,14 +55,14 @@ await Bun.write(
 )
 
 logger.debug("Loading xdg config LaunchAgent")
-await logger.complete("launchctl unload -w ~/Library/LaunchAgents/xdg.config.plist")
-await logger.complete("launchctl load -w ~/Library/LaunchAgents/xdg.config.plist")
+await logger.complete(`launchctl unload -w ${home}/Library/LaunchAgents/xdg.config.plist`)
+await logger.complete(`launchctl load -w ${home}/Library/LaunchAgents/xdg.config.plist`)
 
 // Setup zsh
 logger.info("Setup zsh")
 
-await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zshenv /Users/sizumita/.zshenv`)
-await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zsh.d /Users/sizumita/.zsh.d`)
+await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zshenv ${home}/.zshenv`)
+await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zsh.d ${home}/.zsh.d`)
 
 // Install homebrew casks
 
@@ -71,7 +72,7 @@ await logger.complete(`brew bundle --file ($env.DOT_PATH | path join Brewfile)`)
 
 // Setup Config
 logger.info("Setup .config")
-await logger.complete(`ln -f -s ${dotPath}/.config /Users/sizumita/.config`)
+await logger.complete(`ln -f -s ${dotPath}/.config ${home}/.config`)
 
 // Create 1Password Sock
 logger.info("Create 1Password Sock")
@@ -95,15 +96,15 @@ const sock = `
 </plist>
 `
 await Bun.write(
-    "/Users/sizumita/Library/LaunchAgents/com.1password.SSH_AUTH_SOCK.plist",
+    `${home}/Library/LaunchAgents/com.1password.SSH_AUTH_SOCK.plist`,
     sock,
     {
         createPath: false
     }
 )
 logger.debug("Load 1Password Sock")
-await logger.complete(`launchctl unload -w ~/Library/LaunchAgents/com.1password.SSH_AUTH_SOCK.plist`)
-await logger.complete(`launchctl load -w ~/Library/LaunchAgents/com.1password.SSH_AUTH_SOCK.plist`)
+await logger.complete(`launchctl unload -w ${home}/Library/LaunchAgents/com.1password.SSH_AUTH_SOCK.plist`)
+await logger.complete(`launchctl load -w ${home}/Library/LaunchAgents/com.1password.SSH_AUTH_SOCK.plist`)
 
 logger.debug("Installing rust")
 if (Bun.which("cargo") === null) {
