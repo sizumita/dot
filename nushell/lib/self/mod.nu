@@ -9,6 +9,10 @@ export def update [] {
     bun run ($env.DOT_PATH | path join "bin/update.ts")
 }
 
+export def commit [] {
+    bun run ($env.DOT_PATH | path join "bin/commit.ts")
+}
+
 export def main [] {
     check
 }

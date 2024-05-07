@@ -1,6 +1,4 @@
 import {Logger} from "../src/logger";
-// dumpしていないものがないかチェック
-// dumpしたものでアップデートするものがあるかチェック
 
 const logger = new Logger("self update", {
     use_nu: true,
