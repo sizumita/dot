@@ -45,7 +45,7 @@ export class Logger {
         if (r.exitCode > 0) {
             if (this.option?.error?.show_error) {
                 this.error(
-                    opt?.errorMessage ?? `Failed to run command \`${cmd}\` with status ${r.exitCode}`
+                    opt?.errorMessage ?? `Failed to run command \`${cmd}\` with status ${r.exitCode}:\n${r.text()}`
                 )
                 if (opt?.exit || this.option.error.exit) {
                     process.exit(1)
