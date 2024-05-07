@@ -38,7 +38,7 @@ const envPlist = `
       <string>/bin/launchctl</string>
       <string>setenv</string>
       <string>XDG_CONFIG_HOME</string>
-      <string>$HOME/dot</string>
+      <string>${home}/dot/.config</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
@@ -68,7 +68,11 @@ await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zsh.d ${home}/.zsh.d`)
 
 logger.info("Setup homebrew")
 await logger.complete("brew update")
-await logger.complete(`brew bundle --file ${dotPath}/Brewfile`)
+if (process.env.CI) {
+    await logger.complete(`sudo -v; brew bundle --file ${dotPath}/Brewfile --brews --casks --taps --vscode`)
+} else {
+    await logger.complete(`sudo -v; brew bundle --file ${dotPath}/Brewfile`)
+}
 
 // Setup Config
 logger.info("Setup .config")

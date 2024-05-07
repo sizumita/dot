@@ -73,12 +73,6 @@ $env.ENV_CONVERSIONS = {
     }
 }
 
-# Directories to search for scripts when calling source or use
-# The default for this is $nu.default-config-dir/scripts
-$env.NU_LIB_DIRS = [
-    ($nu.default-config-dir | path join 'lib') # add <nushell-config-dir>/scripts
-]
-
 # Directories to search for plugin binaries when calling register
 # The default for this is $nu.default-config-dir/plugins
 $env.NU_PLUGIN_DIRS = [
@@ -99,6 +93,12 @@ $env.NU_PLUGIN_DIRS = [
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 $env.DOT_PATH = ($nu.home-path | path join dot)
+
+# Directories to search for scripts when calling source or use
+# The default for this is $nu.default-config-dir/scripts
+$env.NU_LIB_DIRS = [
+    ($env.DOT_PATH | path join lib) # add <nushell-config-dir>/scripts
+]
 $env.VOLTA_HOME = ($nu.home-path | path join dot .cache .volta)
 
 use std "path add"

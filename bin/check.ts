@@ -24,7 +24,7 @@ await logger.complete(
 
 logger.info("Checking not listed dependency in Brewfile...")
 
-const resp = await nu("brew bundle cleanup --file $\"($env.DOT_PATH | path join \"Brewfile\")\"").quiet()
-if (resp.text().includes("Run `brew bundle cleanup --force` to make these changes.")) {
-    logger.error("Brewfileに記載されていないライブラリが存在します。`self commit`を実行してください。")
+const resp = await nu("brew bundle cleanup --file $\"($env.DOT_PATH | path join \"Brewfile\")\"")
+if (resp.text().includes("Would uninstall formulae:")) {
+    logger.error("Brewfileに記載されていないライブラリが存在します。`self update`を実行してください。")
 }

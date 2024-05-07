@@ -24,6 +24,7 @@ brew "imagemagick"
 brew "iperf3"
 brew "jq"
 brew "llvm@15"
+brew "mas"
 brew "nushell"
 brew "opam"
 brew "starship"
@@ -48,6 +49,18 @@ cask "steermouse"
 cask "tor-browser"
 cask "visual-studio-code"
 cask "zoom"
+mas "1Password for Safari", id: 1569813296
+mas "Codye", id: 1516894961
+mas "GarageBand", id: 682658836
+mas "Goodnotes", id: 1444383602
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Logic Pro", id: 634148309
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Moom", id: 419330170
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Spark", id: 1176895641
 vscode "editorconfig.editorconfig"
 vscode "kgtkr.processing-language-server-vscode"
 vscode "luke-zhang-04.processing-vscode"
