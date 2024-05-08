@@ -16,7 +16,7 @@ $directory\
 $git_branch\
 [ ](fg:127 bg:none)"""
 
-right_format = "$status$time$battery$memory_usage"
+right_format = "$status$cmd_duration$time$battery$memory_usage"
 
 [aws]
 disabled = true
@@ -55,20 +55,21 @@ style = "bright-white bg:127"
 
 
 [git_status]
-format = '\[ $staged$untracked$modified$deleted\]'
-staged = '[+$count](bold green) '
-untracked = "[+$count](purple) "
-modified = "[±$count](yellow) "
+format = '[\[](green) $staged$untracked$modified$deleted[\]](green)'
+staged = '[++$count](bold green) '
+untracked = "[?$count](purple) "
+modified = "[+$count](yellow) "
 deleted = "[-$count](red)"
 
 [memory_usage]
 disabled = false
-threshold = 0
+threshold = 20
 format = "$symbol [${ram}( | ${swap})]($style) "
 
 [time]
 disabled = false
 style = "bold green"
+format = '[$time]($style) '
 
 [status]
 disabled = false

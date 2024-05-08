@@ -1473,13 +1473,17 @@
       "Pages": {
         "id": "409201541",
         "version": "12.2.1"
+      },
+      "Unsplash Wallpapers": {
+        "id": "1284863847",
+        "version": "2024.03"
       }
     }
   },
   "system": {
     "macos": {
       "sonoma": {
-        "HOMEBREW_VERSION": "4.2.21-24-g621dce8",
+        "HOMEBREW_VERSION": "4.2.21-32-g802487d",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.3.0.0.1.1708646388",
