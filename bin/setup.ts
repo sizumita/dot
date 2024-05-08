@@ -1,5 +1,7 @@
 import { $ } from "bun";
 import {Logger} from "../src/logger";
+import {nu} from "../src/nu.ts";
+import { unlink } from "node:fs/promises";
 
 const dotPath = await $`echo "$HOME/dot"`.text().then(x => x.trim())
 const home = process.env.HOME as string
@@ -61,8 +63,8 @@ await logger.complete(`launchctl load -w ${home}/Library/LaunchAgents/xdg.config
 // Setup zsh
 logger.info("Setup zsh")
 
-await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zshenv ${home}/.zshenv`)
-await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zsh.d ${home}/.zsh.d`)
+await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zshenv ${home}`)
+await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zsh.d ${home}`)
 
 // Install homebrew casks
 
@@ -76,7 +78,22 @@ if (!process.env.CI) {
 
 // Setup Config
 logger.info("Setup .config")
-await logger.complete(`ln -f -s ${dotPath}/.config ${home}/.config`)
+await logger.complete(`ln -f -s ${dotPath}/.config ${home}`)
+
+// Setup .gitconfig
+logger.info("Setup .gitconfig")
+const type = await nu(`ls ${home}/.gitconfig | get type | get 0`, true).quiet()
+console.log(type.text())
+if (type.exitCode === 0) {
+    // File found, deleting
+    if (type.text().startsWith("file")) {
+        await unlink(`${home}/.gitconfig`)
+        await logger.complete(`ln -f -s ${dotPath}/static/.gitconfig ${home}`)
+    }
+} else {
+    await logger.complete(`ln -f -s ${dotPath}/static/.gitconfig ${home}`)
+}
+
 
 // Create 1Password Sock
 logger.info("Create 1Password Sock")

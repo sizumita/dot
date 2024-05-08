@@ -5,10 +5,10 @@
         "revision": "d6b17f2c55051f62640a9f0092388131b11ad707"
       },
       "homebrew/bundle": {
-        "revision": "9a05d51cbc53eb84a5fde97b7c8f6f6170e79244"
+        "revision": "8cda1729f16719bb8fe28d0c56fc07cd198b4645"
       },
       "homebrew/cask-fonts": {
-        "revision": "c6b0a50cef9b08b7ba548f5511980f74dc115868"
+        "revision": "50e17a02861b0bd53837647e93111af5d58fd5c3"
       },
       "oven-sh/bun": {
         "revision": "6932f28c391bae25c0b13aaa081a241397bc3797"
@@ -1354,7 +1354,7 @@
         }
       },
       "google-chrome": {
-        "version": "124.0.6367.119",
+        "version": "124.0.6367.156",
         "options": {
           "full_name": "google-chrome"
         }
@@ -1483,7 +1483,7 @@
   "system": {
     "macos": {
       "sonoma": {
-        "HOMEBREW_VERSION": "4.2.21-32-g802487d",
+        "HOMEBREW_VERSION": "4.2.21-43-g020d994",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.3.0.0.1.1708646388",
