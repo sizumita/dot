@@ -59,8 +59,10 @@ mas "Mattermost", id: 1614666244
 mas "Moom", id: 419330170
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Pastel", id: 413897608
 mas "Spark", id: 1176895641
 mas "Unsplash Wallpapers", id: 1284863847
+mas "デリバリーズ", id: 290986013
 vscode "editorconfig.editorconfig"
 vscode "kgtkr.processing-language-server-vscode"
 vscode "luke-zhang-04.processing-vscode"
