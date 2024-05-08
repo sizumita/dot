@@ -63,8 +63,8 @@ await logger.complete(`launchctl load -w ${home}/Library/LaunchAgents/xdg.config
 // Setup zsh
 logger.info("Setup zsh")
 
-await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zshenv ${home}`)
-await logger.complete(`ln -f -s ${dotPath}/static/zsh/.zsh.d ${home}`)
+await logger.complete(`ln -f -s -n ${dotPath}/static/zsh/.zshenv ${home}/.zshenv`)
+await logger.complete(`ln -f -s -n ${dotPath}/static/zsh/.zsh.d ${home}/.zsh.d`)
 
 // Install homebrew casks
 
@@ -78,7 +78,7 @@ if (!process.env.CI) {
 
 // Setup Config
 logger.info("Setup .config")
-await logger.complete(`ln -f -s ${dotPath}/.config ${home}`)
+await logger.complete(`ln -f -s -n ${dotPath}/.config ${home}/.config`)
 
 // Setup .gitconfig
 logger.info("Setup .gitconfig")
@@ -88,10 +88,10 @@ if (type.exitCode === 0) {
     // File found, deleting
     if (type.text().startsWith("file")) {
         await unlink(`${home}/.gitconfig`)
-        await logger.complete(`ln -f -s ${dotPath}/static/.gitconfig ${home}`)
+        await logger.complete(`ln -f -s -n ${dotPath}/static/.gitconfig ${home}/.gitconfig`)
     }
 } else {
-    await logger.complete(`ln -f -s ${dotPath}/static/.gitconfig ${home}`)
+    await logger.complete(`ln -f -s -n ${dotPath}/static/.gitconfig ${home}/.gitconfig`)
 }
 
 
@@ -109,7 +109,7 @@ const sock = `
   <array>
     <string>/bin/sh</string>
     <string>-c</string>
-    <string>/bin/ln -sf $HOME/Library/Group\\ Containers/2BUA8C4S2C.com.1password/t/agent.sock \\$SSH_AUTH_SOCK</string>
+    <string>/bin/ln -sfn $HOME/Library/Group\\ Containers/2BUA8C4S2C.com.1password/t/agent.sock \\$SSH_AUTH_SOCK</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
