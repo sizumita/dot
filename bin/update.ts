@@ -1,6 +1,6 @@
 import {Logger} from "../src/logger";
 
-const logger = new Logger("self push", {
+const logger = new Logger("self update", {
     use_nu: true,
     error: {
         show_error: true
@@ -20,3 +20,4 @@ await logger.complete("brew bundle dump -f --file ($env.DOT_PATH | path join Bre
 await logger.info("Cleanup")
 await logger.complete("brew cleanup")
 await import("./check.ts")
+logger.info("`self sync`コマンドを実行し変更を保存してください。")

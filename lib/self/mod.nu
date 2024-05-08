@@ -12,11 +12,13 @@ export def pull [] {
 }
 
 # 現在の環境でdotを上書きします。
-export def push [] {
-    bun run ($env.DOT_PATH | path join "bin/push.ts")
+export def update [] {
+    bun run ($env.DOT_PATH | path join "bin/update.ts")
 }
 
-export alias update = push
+export def sync [] {
+    bun run ($env.DOT_PATH | path join "bin/sync.ts")
+}
 
 
 export def main [] {
