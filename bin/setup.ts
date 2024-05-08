@@ -143,4 +143,7 @@ if (sshConfigType.exitCode === 0) {
     await logger.complete(`ln -f -s -n ${dotPath}/static/.ssh/config ${home}/.ssh/config`)
 }
 
+logger.info("Change repository remote url")
+await logger.complete(`git -C ${dotPath} remote set-url origin git@github.com:sizumita/dot.git`)
+
 logger.info("Please restart this computer.")

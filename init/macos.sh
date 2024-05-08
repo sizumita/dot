@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+xcode-select --install
 export DOTPATH=${PREFIX:-"$HOME/dot"}
 
 # install homebrew
 command -v brew >/dev/null 2>&1 || {
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+  sudo -v
+  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
   eval "$(/opt/homebrew/bin/brew shellenv)";
 }
 brew update
