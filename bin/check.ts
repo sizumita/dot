@@ -6,7 +6,8 @@ import {nu} from "../src/nu.ts";
 const logger = new Logger("self check", {
     use_nu: true,
     error: {
-        show_error: true
+        show_error: true,
+        exit: true
     },
     complete: {
         quiet: !process.env.CI

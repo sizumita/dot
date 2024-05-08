@@ -11,7 +11,7 @@ const logger = new Logger("self sync", {
 
 logger.info("Pulling from remote...")
 
-// await logger.complete("git -C ~/dot pull")
+await logger.complete("git -C ~/dot pull")
 const changes = await nu("git -C ~/dot status --porcelain | into string").nothrow().quiet()
 if (changes.exitCode !== 0) {
     await logger.error("Failed to get status:", changes.text())
@@ -26,5 +26,5 @@ await logger.complete("git -C ~/dot add .")
 const nodeName = await nu("uname | get nodename").nothrow().quiet().text()
 logger.info("変更を保存しpushします")
 await logger.complete(`git -C ~/dot commit -m "[auto] Update changes from ${nodeName}"`)
-// await logger.complete("git -C ~/dot push origin main")
+await logger.complete("git -C ~/dot push origin main")
 logger.info("完了しました。")

@@ -3,7 +3,8 @@ import {Logger} from "../src/logger";
 const logger = new Logger("self pull", {
     use_nu: true,
     error: {
-        show_error: true
+        show_error: true,
+        exit: true
     }
 })
 
