@@ -80,7 +80,6 @@ await logger.complete(`ln -f -s -n ${dotPath}/.config ${home}/.config`)
 // Setup .gitconfig
 logger.info("Setup .gitconfig")
 const type = await nu(`ls ${home}/.gitconfig | get type | get 0`, true).quiet()
-console.log(type.text())
 if (type.exitCode === 0) {
     // File found, deleting
     if (type.text().startsWith("file")) {
@@ -129,6 +128,19 @@ if (Bun.which("cargo") === null) {
         logger.info("Rust is installed. updating...")
         await logger.complete("rustup self update")
     }
+}
+
+logger.info("Add ssh config")
+await logger.complete(`mkdir ${home}/.ssh`)
+const sshConfigType = await nu(`ls ${home}/.ssh/config | get type | get 0`, true).quiet()
+if (sshConfigType.exitCode === 0) {
+    // File found, deleting
+    if (sshConfigType.text().startsWith("file")) {
+        await unlink(`${home}/.ssh/config`)
+        await logger.complete(`ln -f -s -n ${dotPath}/static/.ssh/config ${home}/.ssh/config`)
+    }
+} else {
+    await logger.complete(`ln -f -s -n ${dotPath}/static/.ssh/config ${home}/.ssh/config`)
 }
 
 logger.info("Please restart this computer.")
