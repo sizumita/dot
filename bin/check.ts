@@ -23,6 +23,9 @@ await logger.complete(
     }
 )
 
+logger.info("Checking mac apple store applications...")
+await logger.complete("mas outdated")
+
 logger.info("Checking not listed dependency in Brewfile...")
 
 const resp = await nu("brew bundle cleanup --file $\"($env.DOT_PATH | path join \"Brewfile\")\"")

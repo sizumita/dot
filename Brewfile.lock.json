@@ -1472,15 +1472,15 @@
       },
       "Goodnotes": {
         "id": "1444383602",
-        "version": "6.3.20"
+        "version": "6.3.22"
       },
       "Mattermost": {
         "id": "1614666244",
-        "version": "5.5.1"
+        "version": "5.7.0"
       },
       "Spark": {
         "id": "1176895641",
-        "version": "2.11.28"
+        "version": "2.11.40"
       },
       "Codye": {
         "id": "1516894961",
@@ -1496,11 +1496,11 @@
       },
       "Keynote": {
         "id": "409183694",
-        "version": "12.2.1"
+        "version": "14.0"
       },
       "Logic Pro": {
         "id": "634148309",
-        "version": "10.8"
+        "version": "10.8.1"
       },
       "Microsoft Remote Desktop": {
         "id": "1295203466",
@@ -1508,19 +1508,19 @@
       },
       "Moom": {
         "id": "419330170",
-        "version": "3.2.25"
+        "version": "3.2.26"
       },
       "Numbers": {
         "id": "409203825",
-        "version": "12.2.1"
+        "version": "14.0"
       },
       "Pages": {
         "id": "409201541",
-        "version": "12.2.1"
+        "version": "14.0"
       },
       "Unsplash Wallpapers": {
         "id": "1284863847",
-        "version": "2024.03"
+        "version": "2024.05"
       }
     }
   },
