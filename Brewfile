@@ -53,6 +53,7 @@ cask "visual-studio-code"
 cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Codye", id: 1516894961
+mas "Final Cut Pro", id: 424389933
 mas "Goodnotes", id: 1444383602
 mas "Keynote", id: 409183694
 mas "Logic Pro", id: 634148309
