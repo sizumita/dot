@@ -22,11 +22,12 @@ export def sync [] {
 
 
 export def main [] {
-    let i = [check pull push] | input list --index "何をしますか？"
+    let i = [check pull update sync] | input list --index "何をしますか？"
     match $i {
         0 => check
         1 => pull
-        2 => push
+        2 => update
+        3 => sync
     }
 }
 
