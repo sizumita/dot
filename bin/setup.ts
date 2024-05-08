@@ -50,10 +50,7 @@ const envPlist = `
 logger.debug("Writing xdg config")
 await Bun.write(
     `${home}/Library/LaunchAgents/xdg.config.plist`,
-    envPlist,
-    {
-        createPath: false
-    }
+    envPlist
 )
 
 logger.debug("Loading xdg config LaunchAgent")
@@ -118,10 +115,7 @@ const sock = `
 `
 await Bun.write(
     `${home}/Library/LaunchAgents/com.1password.SSH_AUTH_SOCK.plist`,
-    sock,
-    {
-        createPath: false
-    }
+    sock
 )
 logger.debug("Load 1Password Sock")
 await logger.complete(`launchctl unload -w ${home}/Library/LaunchAgents/com.1password.SSH_AUTH_SOCK.plist`)

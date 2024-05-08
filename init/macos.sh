@@ -34,7 +34,5 @@ brew bundle --file="init/Brewfile"
 
 echo "Successfully installed environments, now let to run setup script"
 
-cd "$DOTPATH" || exit 1
-
 bun install
 bun run bin/setup.ts
