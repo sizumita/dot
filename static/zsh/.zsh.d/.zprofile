@@ -47,12 +47,15 @@ typeset -gU cdpath fpath mailpath path
 # )
 
 # Set the list of directories that Zsh searches for programs.
+export VOLTA_HOME="$HOME/dot/.cache/.volta"
+
 path=(
     /opt/{homebrew,local}/{,s}bin(N)
     /usr/local/{,s}bin(N)
     $HOME/local/bin
-    $HOME/dot/bin
+    $HOME/dot/local/bin
     $HOME/.cargo/bin
+    $VOLTA_HOME/bin
     /opt/homebrew/opt/llvm/bin
     $path
 )

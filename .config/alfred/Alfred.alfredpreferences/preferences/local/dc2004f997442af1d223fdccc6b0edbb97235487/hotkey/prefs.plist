@@ -2,9 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>pages</key>
-	<array/>
-	<key>uid</key>
-	<string>402045D6-7EC0-42CC-B5FD-31144EBEDACA</string>
+	<key>default</key>
+	<dict>
+		<key>key</key>
+		<integer>49</integer>
+		<key>mod</key>
+		<integer>262144</integer>
+		<key>string</key>
+		<string> </string>
+	</dict>
 </dict>
 </plist>

@@ -2,9 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>pages</key>
-	<array/>
-	<key>uid</key>
-	<string>402045D6-7EC0-42CC-B5FD-31144EBEDACA</string>
+	<key>darkthemeuid</key>
+	<string>theme.custom.B9DB8A9E-150A-45AA-9E1A-85894F3611A8</string>
 </dict>
 </plist>
