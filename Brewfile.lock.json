@@ -1352,6 +1352,50 @@
             }
           }
         }
+      },
+      "elixir": {
+        "version": "1.16.2",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_sonoma": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/elixir/blobs/sha256:6fb3a98957712f755e554f3af575b95c15862a710d225e21538df3365d0e8847",
+              "sha256": "6fb3a98957712f755e554f3af575b95c15862a710d225e21538df3365d0e8847"
+            },
+            "arm64_ventura": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/elixir/blobs/sha256:4a073e2f627cf227caf6a827ecca4970f93f612d9d68049ff42b6d396c04cd0b",
+              "sha256": "4a073e2f627cf227caf6a827ecca4970f93f612d9d68049ff42b6d396c04cd0b"
+            },
+            "arm64_monterey": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/elixir/blobs/sha256:215bcfdab0f32085a3b3da90581f07afa89c37ceed3d89b1a91168a081b235df",
+              "sha256": "215bcfdab0f32085a3b3da90581f07afa89c37ceed3d89b1a91168a081b235df"
+            },
+            "sonoma": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/elixir/blobs/sha256:a8987062fc8366740fb48e98a7f5b2720c96824c9dce599a57b72cc38a9e259b",
+              "sha256": "a8987062fc8366740fb48e98a7f5b2720c96824c9dce599a57b72cc38a9e259b"
+            },
+            "ventura": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/elixir/blobs/sha256:541d8cf0d843424527122d38253c73aa5d3890b05b6b5f01d57f3e0618413a53",
+              "sha256": "541d8cf0d843424527122d38253c73aa5d3890b05b6b5f01d57f3e0618413a53"
+            },
+            "monterey": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/elixir/blobs/sha256:e77fb13fc651af06d5eaaa52833cc31b1f4ed2e9b25ad29588e00ae05ef1f012",
+              "sha256": "e77fb13fc651af06d5eaaa52833cc31b1f4ed2e9b25ad29588e00ae05ef1f012"
+            },
+            "x86_64_linux": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/elixir/blobs/sha256:d5a392d6b61b4641d12088d8d1045b6edae8dd86c36c15ddf3cb8e9c051e2459",
+              "sha256": "d5a392d6b61b4641d12088d8d1045b6edae8dd86c36c15ddf3cb8e9c051e2459"
+            }
+          }
+        }
       }
     },
     "cask": {
