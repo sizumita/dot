@@ -1442,7 +1442,7 @@
         }
       },
       "cloudflared": {
-        "version": "2024.1.1",
+        "version": "2024.4.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
