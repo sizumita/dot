@@ -8,7 +8,7 @@
         "revision": "114edd435d2f6abfa1ebb84b3a47bf9c8efe3870"
       },
       "homebrew/cask-fonts": {
-        "revision": "84f6811990e3c971dac0728f0014abf919d8c53b"
+        "revision": "fe9faf2469a035266992c35bed50e082420679f8"
       },
       "oven-sh/bun": {
         "revision": "f37048645d6d72b826b5e71dae718be5d7ce9141"
@@ -1442,7 +1442,7 @@
         }
       },
       "cloudflared": {
-        "version": "2024.4.1",
+        "version": "2024.1.1",
         "bottle": {
           "rebuild": 0,
           "root_url": "https://ghcr.io/v2/homebrew/core",
@@ -1677,7 +1677,7 @@
   "system": {
     "macos": {
       "sonoma": {
-        "HOMEBREW_VERSION": "4.2.21",
+        "HOMEBREW_VERSION": "4.2.21-113-g4167900",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.3.0.0.1.1708646388",
