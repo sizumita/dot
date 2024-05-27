@@ -100,11 +100,13 @@ $env.NU_LIB_DIRS = [
     ($env.DOT_PATH | path join lib) # add <nushell-config-dir>/scripts
 ]
 $env.VOLTA_HOME = ($nu.home-path | path join dot .cache .volta)
+$env.GOPATH = ($nu.home-path | path join dot .cache go)
 
 use std "path add"
 path add /opt/homebrew/bin
 path add /opt/homebrew/sbin
 path add /usr/local/bin
+path add ($env.HOME | path join dot .cache go bin)
 path add ($env.HOME | path join .cargo bin)
 path add ($env.HOME | path join dot local bin)
 path add ($env.VOLTA_HOME | path join bin)

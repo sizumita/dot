@@ -48,6 +48,7 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 export VOLTA_HOME="$HOME/dot/.cache/.volta"
+export GOPATH="$HOME/dot/.cache/go"
 
 path=(
     /opt/{homebrew,local}/{,s}bin(N)
@@ -55,6 +56,7 @@ path=(
     $HOME/local/bin
     $HOME/dot/local/bin
     $HOME/.cargo/bin
+    $HOME/dot/.cache/go/bin
     $VOLTA_HOME/bin
     /opt/homebrew/opt/llvm/bin
     $path
