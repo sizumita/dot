@@ -110,3 +110,8 @@ path add ($env.HOME | path join dot .cache go bin)
 path add ($env.HOME | path join .cargo bin)
 path add ($env.HOME | path join dot local bin)
 path add ($env.VOLTA_HOME | path join bin)
+
+alias la = ls -a
+alias ll = ls -l
+alias pnpw = pnpm -w
+
