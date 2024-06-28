@@ -52,6 +52,7 @@ export GOPATH="$HOME/dot/.cache/go"
 
 path=(
     /opt/{homebrew,local}/{,s}bin(N)
+    /opt/homebrew/bin
     /usr/local/{,s}bin(N)
     $HOME/local/bin
     $HOME/dot/local/bin
