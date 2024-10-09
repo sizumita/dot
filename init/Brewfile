@@ -3,5 +3,5 @@ tap "oven-sh/bun"
 
 brew "git"
 brew "oven-sh/bun/bun"
-brew "nushell"
-brew "starship"
+brew "mise"
+brew "gh"
