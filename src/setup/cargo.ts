@@ -6,5 +6,5 @@ export const setup_rust = async () => {
 }
 
 export const setup_cargo_binaries = async () => {
-    await $`${home}/.cargo/bin/cargo install cargo-update eza sheldon starship bat fd --locked`
+    await $`${home}/.cargo/bin/cargo +stable install cargo-update eza sheldon starship bat --locked`
 }
