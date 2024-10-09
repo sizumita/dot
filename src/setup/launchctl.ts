@@ -27,8 +27,8 @@ export const setup_xdg_config = async () => {
         envPlist
     )
 
-    await $`launchctl unload -w ${home}/Library/LaunchAgents/xdg.config.plist`
-    await $`launchctl load -w ${home}/Library/LaunchAgents/xdg.config.plist`
+    await $`sudo launchctl unload -w ${home}/Library/LaunchAgents/xdg.config.plist`
+    await $`sudo launchctl load -w ${home}/Library/LaunchAgents/xdg.config.plist`
 }
 
 export const setup_1password_sock = async () => {
