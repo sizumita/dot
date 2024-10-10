@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
-
+#!/usr/bin/env zsh
 xcode-select --install
 export DOTPATH=${PREFIX:-"$HOME/dot"}
+export XDG_CONFIG_HOME=${PREFIX:-"$HOME/dot"}
 
 # install homebrew
 command -v brew >/dev/null 2>&1 || {
@@ -9,7 +9,6 @@ command -v brew >/dev/null 2>&1 || {
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
   eval "$(/opt/homebrew/bin/brew shellenv)";
 }
-brew update
 
 # install git
 
@@ -28,13 +27,8 @@ else
   cd "$DOTPATH" || exit 1
 fi
 
-# install from init Brewfile
-
+brew update
 brew bundle --file="init/Brewfile"
 
-# run script
-
-echo "Successfully installed environments, now let to run setup script"
-
-bun install
-bun run bin/setup.ts
+bun install --frozen-lockfile
+bun run src/setup/main.ts
