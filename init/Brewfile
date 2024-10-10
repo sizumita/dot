@@ -1,6 +1,5 @@
 tap "homebrew/bundle"
 tap "oven-sh/bun"
-tap "homebrew/cask-fonts"
 
 brew "git"
 brew "oven-sh/bun/bun"
