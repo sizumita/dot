@@ -20,9 +20,12 @@ export const setup_symlink = async () => {
     await maybeRm(`${home}/.gitconfig`)
     await symlink(`${dotPath}/static/.gitconfig`, `${home}/.gitconfig`)
 
-
     // ssh config
     await mkdir(`${home}/.ssh`, {recursive: true})
     await maybeRm(`${home}/.ssh/config`)
     await symlink(`${dotPath}/static/.ssh/config`, `${home}/.ssh/config`)
+
+    // local
+    await maybeRm(`${home}/local`)
+    await symlink(`${dotPath}/local`, `${home}/local`)
 }

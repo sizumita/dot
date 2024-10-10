@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 xcode-select --install
 export DOTPATH=${PREFIX:-"$HOME/dot"}
 export XDG_CONFIG_HOME=${PREFIX:-"$HOME/dot"}
@@ -29,5 +30,5 @@ fi
 brew update
 brew bundle --file="init/Brewfile"
 
-bun install --production --frozen-lockfile
+bun install --frozen-lockfile
 bun run src/setup/main.ts
