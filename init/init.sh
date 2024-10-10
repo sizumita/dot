@@ -29,5 +29,5 @@ fi
 brew update
 brew bundle --file="init/Brewfile"
 
-bun install
+bun install --production --frozen-lockfile
 bun run src/setup/main.ts
