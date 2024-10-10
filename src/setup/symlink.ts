@@ -9,21 +9,20 @@ export const setup_symlink = async () => {
     // Setup zsh
     await maybeRm(`${home}/.zshenv`)
     await maybeRm(`${home}/.zsh.d`)
-    await symlink(`${home}/.zshenv`, `${dotPath}/.zshenv`)
-    await symlink(`${home}/.zsh.d`, `${dotPath}/.zsh.d`)
+    await symlink(`${dotPath}/.zshenv`, `${home}/.zshenv`)
+    await symlink(`${dotPath}/.zsh.d`, `${home}/.zsh.d`)
 
     // Setup Config
     await maybeRm(`${home}/.config`)
-    await symlink(`${home}/.config`, `${dotPath}/.config`)
+    await symlink( `${dotPath}/.config`, `${home}/.config`)
 
     // Setup .gitconfig
     await maybeRm(`${home}/.gitconfig`)
-    await symlink(`${home}/.gitconfig`, `${dotPath}/static/.gitconfig`)
+    await symlink(`${dotPath}/static/.gitconfig`, `${home}/.gitconfig`)
 
 
     // ssh config
     await mkdir(`${home}/.ssh`, {recursive: true})
     await maybeRm(`${home}/.ssh/config`)
-    await symlink(`${home}/.ssh/config`, `${dotPath}/static/.ssh/config`)
-
+    await symlink(`${dotPath}/static/.ssh/config`, `${home}/.ssh/config`)
 }
