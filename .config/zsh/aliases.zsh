@@ -1,4 +1,4 @@
-alias ls=exa
-alias la=exa -a
-alias ll=exa -l
+alias ls=eza
+alias la=eza -a
+alias ll=eza -l
 alias self=bun run "${HOME}/dot/src/self.main.ts"
