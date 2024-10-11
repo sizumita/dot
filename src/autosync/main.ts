@@ -6,9 +6,9 @@ const home = process.env.HOME as string
 
 logging.checking("dotfile directory")
 await $`git -C ${home}/dot fetch`
-const isDirty = await $`git status -s`.quiet().text().then(x => x.length !== 0)
+const isDirty = await $`git -C ${home}/dot status -s`.quiet().text().then(x => x.length !== 0)
 const hasRemoteNewCommit = await $`git -C ${home}/dot diff HEAD..origin/main --stat --exit-code`.nothrow().quiet().then(x => x.exitCode !== 0)
-const hasLocalNewCommit = await $`git-C ${home}/dot  diff HEAD..origin/main --stat --exit-code`.nothrow().quiet().then(x => x.exitCode !== 0)
+const hasLocalNewCommit = await $`git -C ${home}/dot diff HEAD..origin/main --stat --exit-code`.nothrow().quiet().then(x => x.exitCode !== 0)
 
 if (isDirty) {
     if (hasRemoteNewCommit) {

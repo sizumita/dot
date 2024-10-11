@@ -42,6 +42,7 @@ path=(
     /usr/local/{,s}bin(N)
     $HOME/local/bin
     $HOME/.cargo/bin
+    $HOME/.local/share/mise/shims
     $path
 )
 
