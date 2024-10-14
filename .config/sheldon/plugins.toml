@@ -51,6 +51,9 @@ inline = 'eval "$(/opt/homebrew/bin/brew shellenv)"'
 [plugins.compinit]
 inline = 'autoload -Uz compinit && zsh-defer compinit'
 
+[plugins.add-zsh-hook]
+inline = 'autoload -Uz add-zsh-hook'
+
 [plugins.local-sync]
 local = '~/dot/.config/zsh/'
 use = ['*.sync.zsh']
