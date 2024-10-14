@@ -23,7 +23,9 @@ export const setup_symlink = async () => {
     // ssh config
     await mkdir(`${home}/.ssh`, {recursive: true})
     await maybeRm(`${home}/.ssh/config`)
+    await maybeRm(`${home}/.ssh/allowed_signers`)
     await symlink(`${dotPath}/static/.ssh/config`, `${home}/.ssh/config`)
+    await symlink(`${dotPath}/static/.ssh/allowed_signers`, `${home}/.ssh/allowed_signers`)
 
     // local
     await maybeRm(`${home}/local`)
