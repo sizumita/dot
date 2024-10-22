@@ -3,8 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>pages</key>
-	<array/>
+	<array>
+		<string>EBAB0A08-A8EC-4BC6-9EAE-3EE59C72957A</string>
+		<string>41A0B371-1CEC-4C57-A6EE-0A1DD90BE1F0</string>
+		<string>7EF7B716-04E4-4E69-91F4-979D54D07FD8</string>
+		<string>3420A778-6E7B-4BCF-8796-EBED1463EE05</string>
+		<string>39F492E7-80E2-410A-B75F-764CF137303D</string>
+		<string>AE1E0299-DE0F-4B7C-B2A7-8EA5D5F546E9</string>
+	</array>
 	<key>uid</key>
-	<string>ADAD9B2F-D109-46C4-A09C-3FEFC85DF972</string>
+	<string>49C27DB7-CBB1-4DAD-AAD6-F4B059B0A57D</string>
 </dict>
 </plist>

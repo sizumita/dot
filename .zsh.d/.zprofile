@@ -41,6 +41,7 @@ path=(
     $HOME/local/bin
     $HOME/.cargo/bin
     $HOME/.local/share/mise/shims
+    /opt/homebrew/opt/openjdk@11/bin
     $path
 )
 
